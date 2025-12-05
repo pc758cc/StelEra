@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { Menu, X, Phone, Mail, Clock } from "lucide-react"
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X, Phone, Mail, Clock } from "lucide-react";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about-us", label: "About" },
     { href: "/products", label: "Products" },
-    { href: "/industries", label: "Industries" },
-    { href: "/certificates", label: "Certificates" },
-    { href: "/contact-us", label: "Contact" },
-  ]
+    { href: "/industries", label: "Companies" },
+    // { href: "/certificates", label: "Certificates" },
+    { href: "/contact-us", label: "Contact Us" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -25,11 +25,11 @@ export default function Header() {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 8269922916</span>
+                <span>+91 8817290970</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span className="text-white/90">blackspec.engineering@gmail.com</span>
+                <span className="text-white/90">stlera.info@gmail.com</span>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -49,9 +49,9 @@ export default function Header() {
             className="flex items-center gap-2 font-bold text-2xl text-primary hover:text-accent transition-colors"
           >
             <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">B</span>
+              <span className="text-white font-bold text-lg">S</span>
             </div>
-            <span className="hidden sm:inline">BlackSpec</span>
+            <span className="hidden sm:inline">Stlera</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -81,7 +81,11 @@ export default function Header() {
             className="lg:hidden p-2 hover:bg-muted rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="w-6 h-6 text-foreground" /> : <Menu className="w-6 h-6 text-foreground" />}
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-foreground" />
+            ) : (
+              <Menu className="w-6 h-6 text-foreground" />
+            )}
           </button>
         </div>
 
@@ -111,5 +115,5 @@ export default function Header() {
         )}
       </div>
     </header>
-  )
+  );
 }
